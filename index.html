@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: red;
+        }
+
+        #product {
+            position: relative;
+            left: 40%;
+        }
+
+        .add-input {
+            position: relative;
+            left: 38%;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .add-btn{ 
+            height: 35px;
+            width: 60px;
+            background-color: #00FF00;
+        }
+
+        #add{
+            height: 30px ;
+            width: 195px;
+        }
+
+        #edit{
+            background-color: orange;
+        }
+
+        #del{
+            background-color: red;
+        }
+        table,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 30px;
+        }
+
+        button {
+            height: 30px;
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-list">
+        <h1>Product Management</h1>
+        <hr>
+        <div class="add-input">
+            <input type="text" id="add" placeholder="Type a new product in here">
+            <button class="add-btn" onclick="addNewProduct()">Add</button>
+        </div>
+        <table id="product"></table>
+    </div>
+    <script>
+        let array = [
+            "Iphone XS Max",
+            "Iphone 12",
+            "Iphone 12 pro",
+            "Samsung galaxy S22",
+            "Samsung note 11",
+            "Oppo Ultra Max",
+            "Nokia E72",
+            "Nokia 1280"
+        ];
+
+        const EDIT = '<button id="edit">Edit</button>';
+        const DEL = '<button id="del">Del</button>';
+
+        // hien thi danh sach san pham
+        function showProductList() {
+            let data = "";
+            for (let i = 0; i < array.length; i++) {
+                data += "<tr>"
+                    + "<th id='" + i +"'" + ">" + array[i] + "</th>"
+                    + "<td>" + EDIT + "</td>"
+                    + "<td>" + DEL + "</td>"
+                    + "</tr>";
+            }
+            document.getElementById("product").innerHTML = data;
+        }
+
+        // them mot san pham
+        function addNewProduct() {
+            let data = document.getElementById('add').value;
+            console.log(data);
+            if (data !== "") {
+                array.push(data);
+            }
+            showProductList();
+        }
+        // sua ten san pham
+        function editNameOfProduct() {
+            let data = document.getElementById('')
+        }
+        // xoa san pham
+        function delProduct() {
+            
+        }
+        function main() {
+            showProductList();
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
